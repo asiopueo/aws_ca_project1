@@ -1,0 +1,57 @@
+[ec2-user@ip-10-1-10-209 ~]$ mysql -u admin -p -h cand-db-primary.czjnkcd13atq.eu-central-1.rds.amazonaws.com
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 36
+Server version: 8.0.20 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| udacity            |
++--------------------+
+4 rows in set (0.00 sec)
+
+MySQL [(none)]> USE udacity;
+Database changed
+MySQL [udacity]> CREATE TABLE Owls (OwlID int, Name varchar(255));
+Query OK, 0 rows affected (0.04 sec)
+
+MySQL [udacity]> INSERT INTO Owls VALUES (Rusty);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MySQL [udacity]> INSERT INTO Owls VALUES (1, Rusty);
+ERROR 1054 (42S22): Unknown column 'Rusty' in 'field list'
+MySQL [udacity]> INSERT INTO Owls VALUES (1, 'Rusty');
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [udacity]> INSERT INTO Owls VALUES (2, 'Iris');
+Query OK, 1 row affected (0.02 sec)
+
+MySQL [udacity]> INSERT INTO Owls VALUES (3, 'Ruby');
+Query OK, 1 row affected (0.00 sec)
+
+MySQL [udacity]> INSERT INTO Owls VALUES (4, 'Rupert');
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [udacity]> SELECT * FROM Owls
+    -> ;
++-------+--------+
+| OwlID | Name   |
++-------+--------+
+|     1 | Rusty  |
+|     2 | Iris   |
+|     3 | Ruby   |
+|     4 | Rupert |
++-------+--------+
+4 rows in set (0.00 sec)
+
+MySQL [udacity]> exit
+Bye
+
