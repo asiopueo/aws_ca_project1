@@ -24,8 +24,6 @@ Database changed
 MySQL [udacity]> CREATE TABLE Owls (OwlID int, Name varchar(255));
 Query OK, 0 rows affected (0.04 sec)
 
-MySQL [udacity]> INSERT INTO Owls VALUES (Rusty);
-ERROR 1136 (21S01): Column count doesn't match value count at row 1
 MySQL [udacity]> INSERT INTO Owls VALUES (1, Rusty);
 ERROR 1054 (42S22): Unknown column 'Rusty' in 'field list'
 MySQL [udacity]> INSERT INTO Owls VALUES (1, 'Rusty');
