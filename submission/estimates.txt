@@ -11,14 +11,15 @@ As a result, disgruntled customers will turn away from the service, probably for
 
 
 1. Minimum RTO for a single AZ outage
-For a single AZ outage, AWS will automatically switch to a RDS standby replica in another AZ of the same region. Therefore, RTO is expected to be about 1-2 minutes.
+For a single AZ outage, since we have configured our deployment as a RDS Multi-AZ deployment, AWS will automatically switch to a RDS standby replica in another AZ of the same region. 
+Therefore, RTO is expected to be about 1-2 minutes.
 
 2. Minimum RTO for a single region outage
 Here, a RDS in the secondary region needs to be manually promoted to a primary instance. Therefore we expect this process to take up to an hour, taking account the time it takes to notify the responsible engineer.
 
 3. Minimum RPO for a single AZ outage
-5 minutes
+RPO for recovery is typically 5 minutes for an single-AZ instance failure.
 
 4. Minimum RPO for a single region outage
-5 minutes since there is an active read replica
+Again, typically 5 minutes since there is an active read replica.
 
