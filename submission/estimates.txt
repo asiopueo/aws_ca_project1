@@ -1,0 +1,24 @@
+RTO - Recovery Time Objective
+
+The Recovery Time Objective is the time the offered service is down, i.e. customers cannot access the portal of the service anymore.
+
+
+RPO - Recovery Point Objective
+
+The Recovery Point Objective is the time interval in which data is unrecoverably lost. For example, when the database to collect orders of a web shop is down, 
+but the front end of the shop is still up. In this case, customers will still be able to place orders, but these orders will not be recorded by the backend and 
+hence cannot be processed further - the order data will inevitably be lost and disgrunteled customers will turn away from the service, probably forever.
+
+
+1. Minimum RTO for a single AZ outage
+
+
+2. Minimum RTO for a single region outage
+
+
+3. Minimum RPO for a single AZ outage
+
+
+4. Minimum RPO for a single region outage
+
+
