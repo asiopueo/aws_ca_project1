@@ -1,8 +1,16 @@
-RTO - Recovery Time Objective
+Write a paragraph or two describing the achievable Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for this Multi-AZ, multi-region database in terms of:
+
+1.) Minimum RTO for a single AZ outage
+2.) Minimum RTO for a single region outage
+3.) Minimum RPO for a single AZ outage
+4.) Minimum RPO for a single region outage
+
+
+Def: RTO - Recovery Time Objective
 =============================
 The Recovery Time Objective is the time interval in which the offered service is down.
 
-RPO - Recovery Point Objective
+Def: RPO - Recovery Point Objective
 ==============================
 The Recovery Point Objective is the time interval in which data is unrecoverably lost. For example, consider the scenario where the database of a web shop is down but the front end of the shop is still running. 
 In this case, customers will still be able to place orders, but these orders will not be recorded by the backend and hence cannot be processed any further - the orderss will inevitably be lost.
@@ -10,16 +18,16 @@ As a result, disgruntled customers will turn away from the service, probably for
 
 
 
-1. Minimum RTO for a single AZ outage
+ad 1.) Minimum RTO for a single AZ outage
 For a single AZ outage, since we have configured our deployment as a RDS Multi-AZ deployment, AWS will automatically switch to a RDS standby replica in another AZ of the same region. 
 Therefore, RTO is expected to be about 1-2 minutes.
 
-2. Minimum RTO for a single region outage
+ad 2.) Minimum RTO for a single region outage
 Here, a RDS in the secondary region needs to be manually promoted to a primary instance. Therefore we expect this process to take up to an hour, taking account the time it takes to notify the responsible engineer.
 
-3. Minimum RPO for a single AZ outage
+ad 3.) Minimum RPO for a single AZ outage
 RPO for recovery is typically 5 minutes for an single-AZ instance failure.
 
-4. Minimum RPO for a single region outage
+ad 4.) Minimum RPO for a single region outage
 Again, typically 5 minutes since there is an active read replica.
 
